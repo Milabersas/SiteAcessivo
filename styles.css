@@ -37,7 +37,7 @@ section {
 }
 
 .inicio-fundo {
-    background-image: url('img/fundo-noite-lua.jpg'); /* Sugestão: lua cheia */
+    background-image: url('img/fundo-noite-lua.jpg'); /*lua cheia */
     background-size: cover;
     background-position: center;
     border-radius: 80px;
@@ -158,7 +158,7 @@ h2 {
 }
 
 .form-control {
-    background-color: #6b4c8a; /* roxo médio */
+    background-color: #6b4c8a; /* rm */
     color: var(--cinza-claro);
     border: none;
     border-radius: 8px;
