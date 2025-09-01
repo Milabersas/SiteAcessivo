@@ -7,6 +7,11 @@
     --roxo-claro: #7E5BA8;
     --preto-fundo: #1A1A1A;
     --cinza-claro: #DDD6F3;
+
+    /* Variáveis para alto contraste */
+    --alto-contraste-fundo: #000000;
+    --alto-contraste-texto: #ffffff;
+    --alto-contraste-link: #ffd700;
 }
 
 body {
@@ -17,7 +22,7 @@ body {
 }
 
 header {
-    background-color: #000000cc; /* Preto com transparência */
+    background-color: #000000cc;
     border-bottom: 2px solid var(--dourado);
 }
 
@@ -37,7 +42,7 @@ section {
 }
 
 .inicio-fundo {
-    background-image: url('img/fundo-noite-lua.jpg'); /* lua cheia */
+    background-image: url('img/fundo-noite-lua.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 80px;
@@ -114,7 +119,7 @@ h2 {
 }
 
 #galeria {
-    background-color: #2a1a4a; /* roxo bem escuro */
+    background-color: #2a1a4a;
     padding: 3rem 0;
     border-radius: 30px;
     box-shadow: 0 0 15px var(--dourado);
@@ -133,7 +138,7 @@ h2 {
 }
 
 .formulario {
-    background-color: #3b1f4edd; /* roxo escuro com transparência */
+    background-color: #3b1f4edd;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 15px var(--dourado);
@@ -159,7 +164,7 @@ h2 {
 }
 
 .form-control {
-    background-color: #6b4c8a; /* roxo médio */
+    background-color: #6b4c8a;
     color: var(--cinza-claro);
     border: none;
     border-radius: 8px;
@@ -183,14 +188,12 @@ h2 {
     transform-origin: right center;
 }
 
-/* padrão: opções escondidas */
 .opcoes-acessibilidade {
     margin-top: 10px;
-    display: none; /* inicialmente escondido */
+    display: none;
     flex-direction: column;
 }
 
-/* quando mostrar, adiciona essa classe para exibir */
 .opcoes-acessibilidade.apresenta-lista {
     display: flex;
 }
@@ -199,7 +202,41 @@ h2 {
     margin-bottom: 5px;
 }
 
-/* ======== Adições para controlar tamanho e posicionamento das imagens ======== */
+/* ======== Alto Contraste ======== */
+
+.alto-contraste {
+    background-color: var(--alto-contraste-fundo) !important;
+    color: var(--alto-contraste-texto) !important;
+}
+
+.alto-contraste header,
+.alto-contraste footer,
+.alto-contraste .formulario {
+    background-color: var(--alto-contraste-fundo) !important;
+    color: var(--alto-contraste-texto) !important;
+}
+
+.alto-contraste .nav-link {
+    color: var(--alto-contraste-link) !important;
+}
+
+.alto-contraste .botao-inicio,
+.alto-contraste .formulario button,
+.alto-contraste .btn-primary {
+    background-color: var(--alto-contraste-link) !important;
+    color: var(--alto-contraste-fundo) !important;
+}
+
+.alto-contraste #historia,
+.alto-contraste .fundo-galeria {
+    background: none !important;
+}
+
+.alto-contraste #galeria {
+    background-color: var(--alto-contraste-fundo) !important;
+}
+
+/* ==================== Imagens ==================== */
 
 img {
     max-width: 100%;
@@ -207,27 +244,8 @@ img {
     display: block;
 }
 
-/* Ajuste específico da imagem na seção inicial */
-.img-inicio {
-    position: absolute;
-    right: 2rem;
-    top: 15rem;
-    max-width: 40rem;
-    width: 100%;
-    height: auto;
-    filter: drop-shadow(0 0 10px var(--roxo-escuro));
-}
-
-/* Imagens da galeria */
-#galeria img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-/* Imagens em conteúdo */
-.esquerda-conteudo img, #historia img {
+.esquerda-conteudo img,
+#historia img {
     max-width: 100%;
     max-height: 350px;
     width: auto;
@@ -235,7 +253,15 @@ img {
     border-radius: 15px;
 }
 
-/* Responsividade: ajusta imagem inicial para telas pequenas */
+#galeria img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* ==================== Responsividade ==================== */
+
 @media (max-width: 768px) {
     .img-inicio {
         position: static;
